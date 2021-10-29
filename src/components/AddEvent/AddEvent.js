@@ -11,7 +11,7 @@ const AddEvent = () => {
   const onSubmit = (data) => {
     data.eventId = randomId();
     axios
-      .post("https://fast-ravine-50741.herokuapp.com/events", data)
+      .post("http://localhost:5000/events", data)
       .then((res) => {
         if (res.data.insertedId) {
           swal({
@@ -33,43 +33,43 @@ const AddEvent = () => {
   };
   return (
     <>
-      <h4>Add Event</h4>
+      <h4>Add a new place</h4>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Row sm="1" md="2" className="g-4">
           <Col>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label className="fw-bold">Event Title</Form.Label>
+              <Form.Label className="fw-bold">Name of Place</Form.Label>
               <Form.Control
                 {...register("title", { required: true })}
                 type="text"
-                placeholder="....write here"
+                placeholder="name"
               />
             </Form.Group>
           </Col>
           <Col>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label className="fw-bold">Event date</Form.Label>
+              <Form.Label className="fw-bold">Price</Form.Label>
               <Form.Control
-                {...register("date", { required: true })}
-                type="date"
-                placeholder="....write here"
+                {...register("price", { required: true })}
+                type="price"
+                placeholder="$"
               />
             </Form.Group>
           </Col>
           <Col>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label className="fw-bold">Event description</Form.Label>
+              <Form.Label className="fw-bold">Place Description</Form.Label>
               <Form.Control
                 as="textarea"
                 {...register("description", { required: true })}
                 rows="4"
-                placeholder="Event description"
+                placeholder="provide some attraction description"
               />
             </Form.Group>
           </Col>
           <Col>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label className="fw-bold">Event Banner</Form.Label>
+              <Form.Label className="fw-bold">Image of this Place</Form.Label>
               <Form.Control
                 {...register("img", { required: true })}
                 type="text"

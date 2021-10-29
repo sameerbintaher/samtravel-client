@@ -13,14 +13,14 @@ const UserEvents = () => {
     if (user.displayName) {
       axios
         .get(
-          `https://fast-ravine-50741.herokuapp.com/user/events?userID=${user.uid}`
+          `http://localhost:5000/user/events?userID=${user.uid}`
         )
         .then((res) => {
           setUserEvents(res.data);
           if (res.data.length < 1) {
             swal(
               "No Event Found",
-              "we are not fond any event for you please Register ",
+              "we are not found any event for you please Register ",
               "error"
             );
           }
@@ -40,7 +40,7 @@ const UserEvents = () => {
       if (willDelete) {
         axios
           .delete(
-            `https://fast-ravine-50741.herokuapp.com/user/events/${eventId}/${user.uid}`
+            `http://localhost:5000/user/events/${eventId}/${user.uid}`
           )
           .then((res) => {
             if (res.data.deletedCount > 0) {
@@ -69,16 +69,16 @@ const UserEvents = () => {
             <Col key={event._id} data-aos="fade-up">
               <div className="user-event-item d-flex flex-column flex-md-row p-4 gap-4 position-relative my-3">
                 <div className="user-event-img">
-                  <img className="img-fluid " src={event.img} alt="" />
+                  <img className=" w-100  " src={event.img} alt="" />
                 </div>
                 <div className="user-event-text text-start ">
-                  <h5>{event.title}</h5>
-                  <h6>{processDate(event.date)}</h6>
+                  <h2>You booked for <span className="text-primary">{event.title}</span></h2>
+                  <h4>Possible Travel Date: <span className="text-primary">{processDate(event.date)}</span></h4>
                   <button
-                    className="user-event-btn"
+                    className="btn btn-secondary"
                     onClick={() => handleCancel(event.eventId)}
                   >
-                    Cancel
+                    Cancel Booking
                   </button>
                 </div>
               </div>

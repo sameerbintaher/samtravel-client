@@ -33,7 +33,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("https://fast-ravine-50741.herokuapp.com/events")
+      .get("http://localhost:5000/events")
       .then((res) => setEvents(res.data))
       .catch((err) => console.log(err.message));
   }, []);
@@ -51,15 +51,11 @@ const Home = () => {
       
       <Container>
         
-        <div>
-
-          <Row className='my-2'>
-            <Col sm={10} md={7} lg={5} xl={4} className="mx-auto mt-3 mb-5 ">
-              <h1 className="my-5 text-primary">Desire Place</h1>
-              <h4>Let us transport you with our highly affordable and reliable holiday packages</h4>
-            </Col>
-          </Row>
+        <div className='my-5'>
+          <h1 className="text-primary">Our Most Desire Place</h1>
+          <h4>Let us transport you with our highly affordable and reliable holiday packages</h4>
         </div>
+
         <Row className="g-3 g-md-4 g-lg-5">
           {events.length > 0 ? (
             events.map((event) => (
@@ -69,29 +65,22 @@ const Home = () => {
                 data-aos-duration="800"
                 className="ms-4 ms-md-0"
               >
-                <div className="event-item">
-                  <div className="event-img">
-                    <img className="img-fluid" src={event.img} alt="" />
+                <div className="border rounded-3 shadow my-5">
+                  <div className="">
+                    <img className="img" src={event.img} alt="" />
                   </div>
-                  <div
-                    style={{ backgroundColor: randomColor() }}
-                    className="event-text"
-                  >
-                    <h6>{event.title}</h6>
+                  <p className="my-2 p-2">{event.description}</p>
+                  <div className='pt-5'>
+                  
+                    <h1>This is <span className="text-primary">{event.title}</span></h1>
+                    <h4>Estimated Cost: <span className="text-primary">${event.price}</span></h4>
                   </div>
-                  <div className="event-overlay">
-                    <div className="event-icons">
-                      <BsFillBookmarkStarFill className="event-book"></BsFillBookmarkStarFill>
-                      <FiHeart className="event-heart"></FiHeart>
-                      <BsThreeDots className="event-dot"></BsThreeDots>
+
+                  
+                    <div className="p-5 ">
+                      <button className="btn btn-primary w-50" onClick={() => handleEvent(event._id)}>Book this place</button>
                     </div>
-                    <div className="event-add">
-                      <AiOutlineAppstoreAdd
-                        onClick={() => handleEvent(event._id)}
-                        className="add-icon"
-                      ></AiOutlineAppstoreAdd>
-                    </div>
-                  </div>
+                  
                 </div>
               </Col>
             ))

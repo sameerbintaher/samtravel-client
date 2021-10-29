@@ -17,7 +17,7 @@ const AllPlaces = () => {
     }).then((willDelete) => {
       if (willDelete) {
         axios
-          .delete(`https://fast-ravine-50741.herokuapp.com/events/${id}`)
+          .delete(`http://localhost:5000/events/${id}`)
           .then((res) => {
             if (res.data.deletedCount > 0) {
               const remaining = allEvents.filter(
@@ -39,7 +39,7 @@ const AllPlaces = () => {
 
   useEffect(() => {
     axios
-      .get("https://fast-ravine-50741.herokuapp.com/events")
+      .get("http://localhost:5000/events")
       .then((res) => setAllEvents(res.data))
       .catch((err) => console.log(err.message));
   }, []);

@@ -22,7 +22,7 @@ const Register = () => {
 
   useEffect(() => {
     axios
-      .get(`https://fast-ravine-50741.herokuapp.com/event/${eventId}`)
+      .get(`http://localhost:5000/event/${eventId}`)
       .then((res) => {
         setEvent(res.data);
       })
@@ -42,7 +42,7 @@ const Register = () => {
     data.userId = user.uid;
 
     axios
-      .post("https://fast-ravine-50741.herokuapp.com/event/register", data)
+      .post("http://localhost:5000/event/register", data)
       .then((res) => {
         if (res.data?.eventAdded) {
           swal({
@@ -87,12 +87,7 @@ const Register = () => {
                 {...register("eventDate", { required: true })}
                 placeholder="Date"
               />{" "}
-              <br />
-              <label htmlFor="">Anything want from SamTravel</label> <br />
-              <input
-                {...register("Description", { required: true })}
-                placeholder="Your requirement"
-              />{" "}
+              
               <br />
               <label htmlFor="">Where to go</label> <br />
               <input {...register("event")} /> <br />

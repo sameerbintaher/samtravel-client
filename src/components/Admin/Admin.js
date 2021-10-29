@@ -17,7 +17,7 @@ const Admin = () => {
   const { setAdmin } = useAuth();
   useEffect(() => {
     axios
-      .get("https://fast-ravine-50741.herokuapp.com/event_list")
+      .get("http://localhost:5000/event_list")
       .then((res) => {
         setUserEvents(res.data);
       })
@@ -35,7 +35,7 @@ const Admin = () => {
       if (willDelete) {
         axios
           .delete(
-            `https://fast-ravine-50741.herokuapp.com/user/events/${eventId}/${userId}`
+            `http://localhost:5000/user/events/${eventId}/${userId}`
           )
           .then((res) => {
             if (res.data.deletedCount > 0) {
@@ -68,32 +68,24 @@ const Admin = () => {
     <Container fluid className="my-5 text-start h-100">
       <Row className="h-100 g-4 g-md-0">
         <Col sm="12" md="4" lg="3" className="h-100">
-          <div className="ps-4">
-            <h1>SamTravel</h1>
-            <br />
+          <div className="p-4">
             <NavLink
               className="admin-nav-item"
               activeClassName="admin-active-nav-item"
-              to="/admin/visitors"
+              to="/admin/visitor"
             >
               <FiUsers></FiUsers> Total Registered Place
             </NavLink>
             <br />
             <NavLink
-              className="admin-nav-item"
+              className="admin-nav-item btn btn-primary"
               activeClassName="admin-active-nav-item"
               to="/admin/addEvent"
             >
-              <AiOutlinePlus></AiOutlinePlus> Add Place in Database
+               Add Place in Database
             </NavLink>
             <br />
-            <NavLink
-              className="admin-nav-item"
-              activeClassName="admin-active-nav-item"
-              to="/admin/allEvent"
-            >
-              <AiOutlinePlus></AiOutlinePlus> All Place
-            </NavLink>
+            
             <Nav.Link className="user-nav-item" onClick={adminLogout}>
               {" "}
               <FiLogOut className="me-2"></FiLogOut>Log out
