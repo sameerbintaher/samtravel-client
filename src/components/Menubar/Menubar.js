@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./Menubar.css";
-import logo from "../../images/logo.png";
 import useAuth from "../../hooks/useAuth";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { FiLogOut, FiLogIn } from "react-icons/fi";
@@ -31,29 +30,14 @@ const Menubar = () => {
               >
                 Home
               </Nav.Link>
-              <Nav.Link
-                as={NavLink}
-                to="/donation"
-                className="nav-item"
-                activeClassName="active-item"
-              >
-                Donation
-              </Nav.Link>
+
               <Nav.Link
                 as={NavLink}
                 to="/user_events"
                 className="nav-item"
                 activeClassName="active-item"
               >
-                Events
-              </Nav.Link>
-              <Nav.Link
-                as={NavLink}
-                to="/blog"
-                className="nav-item"
-                activeClassName="active-item"
-              >
-                Blog
+                Manage your booking
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
@@ -120,7 +104,7 @@ const Menubar = () => {
         </Nav.Link>
         <Nav.Link
           as={NavLink}
-          to="/admin/volunteer"
+          to="/admin/visitor"
           className="user-nav-item"
           activeClassName="active-item"
         >

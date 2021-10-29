@@ -3,19 +3,19 @@ import { Table } from "react-bootstrap";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { processDate2 } from "../../utilities/utilities";
 
-const VolunteerList = ({ userEvents, handleDelete }) => {
+const VisitorList = ({ userEvents, handleDelete }) => {
   return (
     <div>
-      <h4>Volunteer register list</h4>
+      <h4>Total Visitor registration link</h4>
       <div className="p-4">
         <Table striped bordered hover>
           <thead>
             <tr>
-              <th> Name</th>
-              <th>Email ID</th>
-              <th>Register data</th>
-              <th>Event Name</th>
-              <th>Action</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Registration date</th>
+              <th>Place</th>
+              <th>Your Action</th>
             </tr>
           </thead>
           <tbody>
@@ -40,4 +40,4 @@ const VolunteerList = ({ userEvents, handleDelete }) => {
   );
 };
 
-export default VolunteerList;
+export default VisitorList;

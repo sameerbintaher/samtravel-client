@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Nav, Row, Table } from "react-bootstrap";
 import { NavLink, Switch, Route } from "react-router-dom";
-import logo from "../../images/logo.png";
 import { FiUsers } from "react-icons/fi";
 import { AiOutlinePlus } from "react-icons/ai";
 import "./Admin.css";
 import axios from "axios";
 import swal from "sweetalert";
-import VolunteerList from "../VolunteerList/VolunteerList";
+import VisitorList from "../VisitorList/VisitorList";
 import { FiLogOut } from "react-icons/fi";
 import useAuth from "../../hooks/useAuth";
 import AddEvent from "../AddEvent/AddEvent";
-import AllEvents from "../AllEvents/AllEvents";
+import AllPlaces from "../AllPlaces/AllPlaces";
 
 const Admin = () => {
   const [userEvents, setUserEvents] = useState([]);
@@ -70,19 +69,14 @@ const Admin = () => {
       <Row className="h-100 g-4 g-md-0">
         <Col sm="12" md="4" lg="3" className="h-100">
           <div className="ps-4">
-            <img
-              className="img-fluid mb-4"
-              style={{ width: "200px" }}
-              src={logo}
-              alt=""
-            />
+            <h1>SamTravel</h1>
             <br />
             <NavLink
               className="admin-nav-item"
               activeClassName="admin-active-nav-item"
-              to="/admin/volunteer"
+              to="/admin/visitors"
             >
-              <FiUsers></FiUsers> Volunteer register list
+              <FiUsers></FiUsers> Total Registered Place
             </NavLink>
             <br />
             <NavLink
@@ -90,7 +84,7 @@ const Admin = () => {
               activeClassName="admin-active-nav-item"
               to="/admin/addEvent"
             >
-              <AiOutlinePlus></AiOutlinePlus> Add event
+              <AiOutlinePlus></AiOutlinePlus> Add Place in Database
             </NavLink>
             <br />
             <NavLink
@@ -98,7 +92,7 @@ const Admin = () => {
               activeClassName="admin-active-nav-item"
               to="/admin/allEvent"
             >
-              <AiOutlinePlus></AiOutlinePlus> All Events
+              <AiOutlinePlus></AiOutlinePlus> All Place
             </NavLink>
             <Nav.Link className="user-nav-item" onClick={adminLogout}>
               {" "}
@@ -114,17 +108,17 @@ const Admin = () => {
           style={{ borderLeft: "1px solid #adadad" }}
         >
           <Switch>
-            <Route path="/admin/volunteer">
-              <VolunteerList
+            <Route path="/admin/visitor">
+              <VisitorList
                 userEvents={userEvents}
                 handleDelete={handleDelete}
-              ></VolunteerList>
+              ></VisitorList>
             </Route>
             <Route path="/admin/addEvent">
               <AddEvent></AddEvent>
             </Route>
-            <Route path="/admin/allEvent">
-              <AllEvents></AllEvents>
+            <Route path="/admin/allPlaces">
+              <AllPlaces></AllPlaces>
             </Route>
           </Switch>
         </Col>

@@ -6,8 +6,8 @@ import "./AdminLogin.css";
 const AdminLogin = () => {
   const nameRef = useRef();
   const passRef = useRef();
-  const uName = process.env.REACT_APP_ADMIN_USER_NAME;
-  const pass = process.env.REACT_APP_ADMIN_PASS;
+  const uName = "sameerbintaher";
+  const pass = "123456";
   const { setAdmin } = useAuth();
   const history = useHistory();
   const location = useLocation();

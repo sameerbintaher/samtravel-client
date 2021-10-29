@@ -5,7 +5,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import swal from "sweetalert";
 import { processDate, processDate2 } from "../../utilities/utilities";
 
-const AllEvents = () => {
+const AllPlaces = () => {
   const [allEvents, setAllEvents] = useState([]);
   const handleDelete = (id) => {
     swal({
@@ -45,14 +45,14 @@ const AllEvents = () => {
   }, []);
   return (
     <div>
-      <h1>All events </h1>
+      <h1>All Places </h1>
       <div className="p-4">
         <Table striped bordered hover>
           <thead>
             <tr>
               <th>#</th>
-              <th> Event Name</th>
-              <th>Event Date</th>
+              <th>Place Name</th>
+              <th>Visit Date</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -77,4 +77,4 @@ const AllEvents = () => {
   );
 };
 
-export default AllEvents;
+export default AllPlaces;

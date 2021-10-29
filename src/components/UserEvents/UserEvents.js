@@ -32,7 +32,7 @@ const UserEvents = () => {
   const handleCancel = (eventId) => {
     swal({
       title: "Are you sure?",
-      text: "Cancel This event form you event list",
+      text: "Don't you want to visit this place?",
       icon: "warning",
       buttons: true,
       dangerMode: true,
@@ -48,7 +48,7 @@ const UserEvents = () => {
                 (event) => event.eventId !== eventId
               );
               setUserEvents(remaining);
-              swal("Poof! Your imaginary file has been deleted!", {
+              swal("Okay! We have cancelled you booking", {
                 icon: "success",
               });
             }
@@ -61,7 +61,7 @@ const UserEvents = () => {
   };
   return (
     <Container>
-      <h2 className="header-text my-5">Your Registered Events</h2>
+      <h2 className="text-primary my-5">You have already booked these tour</h2>
       <hr />
       <Row sm={1} lg={2}>
         {userEvents.length > 0 ? (
@@ -85,8 +85,8 @@ const UserEvents = () => {
             </Col>
           ))
         ) : (
-          <Col>
-            <h2>No Event Found</h2>
+          <Col className="my-5 p-5">
+            <h2 className="text-center text-danger">Ohoo! no tour booked</h2>
           </Col>
         )}
       </Row>

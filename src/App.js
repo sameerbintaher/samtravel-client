@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import useFirebase from "./hooks/useFirebase";
 import AuthProvider from "./context/AuthProvider";
@@ -12,6 +11,7 @@ import UserEvents from "./components/UserEvents/UserEvents";
 import Admin from "./components/Admin/Admin";
 import AdminLogin from "./components/AdminLogin/AdminLogin";
 import AdminRoute from "./components/AdminRoute/AdminRoute";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -43,6 +43,9 @@ function App() {
               <AdminLogin></AdminLogin>
             </Route>
           </Switch>
+        </Router>
+        <Router>
+          <Footer></Footer>
         </Router>
       </AuthProvider>
     </div>

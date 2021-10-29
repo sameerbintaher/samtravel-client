@@ -55,7 +55,8 @@ const Home = () => {
 
           <Row className='my-2'>
             <Col sm={10} md={7} lg={5} xl={4} className="mx-auto mt-3 mb-5 ">
-              <h1 className="my-5">Our Special Service</h1>
+              <h1 className="my-5 text-primary">Desire Place</h1>
+              <h4>Let us transport you with our highly affordable and reliable holiday packages</h4>
             </Col>
           </Row>
         </div>

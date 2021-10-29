@@ -39,14 +39,12 @@ const Login = () => {
           "
         >
           <div className="login-form shadow-lg my-5">
-            <h5 className="mb-4">Login With</h5>
+            <h5 className="mb-4">Login With Google</h5>
             <button className="google-login" onClick={handleGoogleSignIn}>
-              <img width="25px" src={googleIcon} alt="" />
-              <span>Continue with Google</span>
+              <img width="50px" src={googleIcon} alt="" />
+              
             </button>
-            <p>
-              Don’t have an account? <NavLink to="">Create an account</NavLink>
-            </p>
+            
           </div>
         </Col>
       </Row>
