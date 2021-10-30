@@ -31,14 +31,17 @@ const Menubar = () => {
                 Home
               </Nav.Link>
 
-              <Nav.Link
-                as={NavLink}
-                to="/user_events"
-                className="nav-item"
-                activeClassName="active-item"
-              >
-                Manage your booking
-              </Nav.Link>
+              {
+                user.displayName&&(<Nav.Link
+                  as={NavLink}
+                  to="/user_events"
+                  className="nav-item"
+                  activeClassName="active-item"
+                >
+                  Manage Booking
+                </Nav.Link>)
+              }
+              
             </Nav>
           </Navbar.Collapse>
           {!user.displayName ? (
@@ -49,8 +52,8 @@ const Menubar = () => {
                 className="user-nav-item"
                 activeClassName="active-item"
               >
-                <button className="nav-btn nav-reg">
-                  <FiLogIn className="me-2"></FiLogIn> Login
+                <button className="btn btn-primary">
+                  Login
                 </button>
               </Nav.Link>
             </Nav>
@@ -89,7 +92,7 @@ const Menubar = () => {
           />
         </div>
         <h5 className="mt-2 text-center">
-          {user.displayName || "Unknown User"}
+          {user.displayName || "Invalid User"}
         </h5>
         <hr />
 

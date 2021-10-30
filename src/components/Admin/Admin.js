@@ -17,7 +17,7 @@ const Admin = () => {
   const { setAdmin } = useAuth();
   useEffect(() => {
     axios
-      .get("http://localhost:5000/event_list")
+      .get("https://floating-savannah-80284.herokuapp.com/event_list")
       .then((res) => {
         setUserEvents(res.data);
       })
@@ -35,7 +35,7 @@ const Admin = () => {
       if (willDelete) {
         axios
           .delete(
-            `http://localhost:5000/user/events/${eventId}/${userId}`
+            `https://floating-savannah-80284.herokuapp.com/user/events/${eventId}/${userId}`
           )
           .then((res) => {
             if (res.data.deletedCount > 0) {

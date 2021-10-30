@@ -14,7 +14,7 @@ const month = [
 ];
 
 export const processDate = (date) => {
-  const strdata = date.split("/");
+  const strdata = date.split('/');
   return `${strdata[0]} ${month[strdata[1] - 1]}, ${strdata[2]}`;
 };
 

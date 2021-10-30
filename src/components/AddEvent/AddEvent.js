@@ -11,7 +11,7 @@ const AddEvent = () => {
   const onSubmit = (data) => {
     data.eventId = randomId();
     axios
-      .post("http://localhost:5000/events", data)
+      .post("https://floating-savannah-80284.herokuapp.com/events", data)
       .then((res) => {
         if (res.data.insertedId) {
           swal({
@@ -67,6 +67,14 @@ const AddEvent = () => {
               />
             </Form.Group>
           </Col>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label className="fw-bold">Event date</Form.Label>
+              <Form.Control
+                {...register("date", { required: true })}
+                type="date"
+                placeholder="....write here"
+              />
+            </Form.Group>
           <Col>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label className="fw-bold">Image of this Place</Form.Label>

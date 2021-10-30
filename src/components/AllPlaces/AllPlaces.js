@@ -17,7 +17,7 @@ const AllPlaces = () => {
     }).then((willDelete) => {
       if (willDelete) {
         axios
-          .delete(`http://localhost:5000/events/${id}`)
+          .delete(`https://floating-savannah-80284.herokuapp.com/events/${id}`)
           .then((res) => {
             if (res.data.deletedCount > 0) {
               const remaining = allEvents.filter(
@@ -39,7 +39,7 @@ const AllPlaces = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/events")
+      .get("https://floating-savannah-80284.herokuapp.com/events")
       .then((res) => setAllEvents(res.data))
       .catch((err) => console.log(err.message));
   }, []);

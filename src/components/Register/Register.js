@@ -22,7 +22,7 @@ const Register = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/event/${eventId}`)
+      .get(`https://floating-savannah-80284.herokuapp.com/event/${eventId}`)
       .then((res) => {
         setEvent(res.data);
       })
@@ -36,20 +36,21 @@ const Register = () => {
   const onSubmit = (data) => {
     setIsUpdated(true);
     const date = new Date();
-    const currentDate = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`;
+    const currentDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
     data.registerDate = currentDate;
     data.eventId = event.eventId;
     data.userId = user.uid;
 
     axios
-      .post("http://localhost:5000/event/register", data)
+      .post("https://floating-savannah-80284.herokuapp.com/event/register", data)
       .then((res) => {
         if (res.data?.eventAdded) {
           swal({
             title: "SORRY!",
-            text: "You already booked it",
+            text: "You have already booked it",
             icon: "error",
             buttons: "back to Home",
+            
           });
         }
         if (res.data.insertedId) {
@@ -72,6 +73,7 @@ const Register = () => {
     <Container className="my-5">
       <h1 className="text-primary">Please fill up this requirements</h1>
       <h3>Then we will confirm your booking</h3>
+      <h4>You can cancel your booking at any time</h4>
       <Row>
         <Col sm="12" md="8" lg="6" xl="5" className="mx-auto text-start mt-5">
           <div className="reg-form">

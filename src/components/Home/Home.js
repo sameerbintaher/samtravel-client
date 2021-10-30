@@ -3,19 +3,14 @@ import React, { useEffect, useState } from "react";
 import {
   Col,
   Container,
-  FormControl,
-  InputGroup,
   Row,
   Spinner,
 } from "react-bootstrap";
-import { BsThreeDots, BsFillBookmarkStarFill } from "react-icons/bs";
-import { FiHeart } from "react-icons/fi";
-import { AiOutlineAppstoreAdd } from "react-icons/ai";
 import "./Home.css";
 import { useHistory } from "react-router";
-import { randomColor } from "../../utilities/utilities";
 import AOS from "aos";
 import Banner from "../Banner/Banner";
+import About from "../About/About";
 AOS.init({
   disable: false,
   startEvent: "DOMContentLoaded",
@@ -33,7 +28,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/events")
+      .get("https://floating-savannah-80284.herokuapp.com/events")
       .then((res) => setEvents(res.data))
       .catch((err) => console.log(err.message));
   }, []);
@@ -46,42 +41,36 @@ const Home = () => {
       fluid
       className="position-relative"
       // onClick={() => setIsMenuOpen(false)}
+      style={{fontFamily:'Poppins'}}
     >
       <Banner></Banner>
       
       <Container>
         
         <div className='my-5'>
-          <h1 className="text-primary">Our Most Desire Place</h1>
+          <h1 className="text-primary">Upcoming Tours</h1>
           <h4>Let us transport you with our highly affordable and reliable holiday packages</h4>
         </div>
 
-        <Row className="g-3 g-md-4 g-lg-5">
+        <Row className="p-md-5 bg-light rounded-3 shadow">
           {events.length > 0 ? (
             events.map((event) => (
               <Col
                 key={event._id}
                 data-aos="zoom-in"
                 data-aos-duration="800"
-                className="ms-4 ms-md-0"
+                className=""
               >
-                <div className="border rounded-3 shadow my-5">
-                  <div className="">
-                    <img className="img" src={event.img} alt="" />
+                <div className="card shadow-sm my-3 mx-auto" style={{width: "20rem"}}>
+                  <img src={event.img} style={{height: "250px"}} class="card-img-top" alt="..."/>
+                  <div className="card-body">
+                    <h1 className="card-title">{event.title}</h1>
+                    <p className="card-text">{event.description}</p>
+                    <h4>Next tour will be <br /> {event.date}</h4>
+                    <h4>Total Estimated travel cost: ${event.price}</h4>
+                    <button className="btn btn-primary" onClick={() => handleEvent(event._id)}>Book this tour</button>
                   </div>
-                  <p className="my-2 p-2">{event.description}</p>
-                  <div className='pt-5'>
-                  
-                    <h1>This is <span className="text-primary">{event.title}</span></h1>
-                    <h4>Estimated Cost: <span className="text-primary">${event.price}</span></h4>
-                  </div>
-
-                  
-                    <div className="p-5 ">
-                      <button className="btn btn-primary w-50" onClick={() => handleEvent(event._id)}>Book this place</button>
-                    </div>
-                  
-                </div>
+                </div> 
               </Col>
             ))
           ) : (
@@ -91,6 +80,8 @@ const Home = () => {
           )}
         </Row>
       </Container>
+
+      <About></About>
     </Container>
   );
 };
