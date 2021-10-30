@@ -10,7 +10,7 @@ const AllPlaces = () => {
   const handleDelete = (id) => {
     swal({
       title: "Are you sure?",
-      text: "Delete this Events and user!",
+      text: "Delete this tour and client!",
       icon: "warning",
       buttons: true,
       dangerMode: true,
@@ -25,14 +25,14 @@ const AllPlaces = () => {
               );
               console.log(remaining);
               setAllEvents(remaining);
-              swal("Poof! Your imaginary file has been deleted!", {
+              swal("Sorry! Better luck next time", {
                 icon: "success",
               });
             }
           })
           .catch((err) => console.log(err.message));
       } else {
-        swal("Your imaginary file is safe!");
+        swal("You're safe to us");
       }
     });
   };

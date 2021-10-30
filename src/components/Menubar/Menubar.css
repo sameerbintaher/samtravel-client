@@ -23,16 +23,19 @@
 .user-avater {
   cursor: pointer;
 }
+.navbar{
+  background-color: antiquewhite;
+}
 
 .user-menu {
-  background: #f6f6f6;
+  background-color: antiquewhite;
   width: 250px;
   height: 400px;
   position: absolute;
   top: 0;
   right: 30px;
   top: 20px;
-  z-index: 90;
+  z-index: 10;
   border-radius: 5px;
   border: 1px solid #adadad7a;
   box-shadow: 8px 12px 8px 0px rgba(0, 0, 0, 0.28);

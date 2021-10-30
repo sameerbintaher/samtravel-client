@@ -6,8 +6,8 @@ import { processDate2 } from "../../utilities/utilities";
 const VisitorList = ({ userEvents, handleDelete }) => {
   return (
     <div>
-      <h4>Total Visitor registration link</h4>
-      <div className="p-4">
+      <h1 className="font fw-bold text-success text-center">You total client and their place</h1>
+      <div className="p-4" style={{overflowX: 'auto'}}>
         <Table striped bordered hover>
           <thead>
             <tr>

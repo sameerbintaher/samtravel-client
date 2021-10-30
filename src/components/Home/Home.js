@@ -11,6 +11,7 @@ import { useHistory } from "react-router";
 import AOS from "aos";
 import Banner from "../Banner/Banner";
 import About from "../About/About";
+import Contact from "../Contact/Contact";
 AOS.init({
   disable: false,
   startEvent: "DOMContentLoaded",
@@ -41,7 +42,7 @@ const Home = () => {
       fluid
       className="position-relative"
       // onClick={() => setIsMenuOpen(false)}
-      style={{fontFamily:'Poppins'}}
+      style={{fontFamily:'Josefin Sans'}}
     >
       <Banner></Banner>
       
@@ -65,9 +66,9 @@ const Home = () => {
                   <img src={event.img} style={{height: "250px"}} class="card-img-top" alt="..."/>
                   <div className="card-body">
                     <h1 className="card-title">{event.title}</h1>
-                    <p className="card-text">{event.description}</p>
-                    <h4>Next tour will be <br /> {event.date}</h4>
-                    <h4>Total Estimated travel cost: ${event.price}</h4>
+                    <p className="card-text" style={{textAlign: "left"}}>{event.description}</p>
+                    <h4 style={{textAlign: "left"}}>Next tour will be <br /> {event.date}</h4>
+                    <h4 style={{textAlign: "left"}}>Total Estimated travel cost: ${event.price}</h4>
                     <button className="btn btn-primary" onClick={() => handleEvent(event._id)}>Book this tour</button>
                   </div>
                 </div> 
@@ -82,6 +83,7 @@ const Home = () => {
       </Container>
 
       <About></About>
+      <Contact></Contact>
     </Container>
   );
 };

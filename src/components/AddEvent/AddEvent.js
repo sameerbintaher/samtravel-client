@@ -4,6 +4,7 @@ import { Col, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
 import { randomId } from "../../utilities/utilities";
+import "./AddEvent.css"
 
 const AddEvent = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -32,12 +33,12 @@ const AddEvent = () => {
       .catch((err) => console.log(err.message));
   };
   return (
-    <>
-      <h4>Add a new place</h4>
+    <div className="font">
+      <h1 className="text-primary">Add a new place in Home</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Row sm="1" md="2" className="g-4">
+        <Row sm="1" md="1" className="g-4">
           <Col>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Group className="my-1" controlId="exampleForm.ControlInput1">
               <Form.Label className="fw-bold">Name of Place</Form.Label>
               <Form.Control
                 {...register("title", { required: true })}
@@ -47,7 +48,7 @@ const AddEvent = () => {
             </Form.Group>
           </Col>
           <Col>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Group className="my-1" controlId="exampleForm.ControlInput1">
               <Form.Label className="fw-bold">Price</Form.Label>
               <Form.Control
                 {...register("price", { required: true })}
@@ -57,7 +58,7 @@ const AddEvent = () => {
             </Form.Group>
           </Col>
           <Col>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Group className="my-1" controlId="exampleForm.ControlInput1">
               <Form.Label className="fw-bold">Place Description</Form.Label>
               <Form.Control
                 as="textarea"
@@ -67,8 +68,8 @@ const AddEvent = () => {
               />
             </Form.Group>
           </Col>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label className="fw-bold">Event date</Form.Label>
+          <Form.Group className="my-1" controlId="exampleForm.ControlInput1">
+              <Form.Label className="fw-bold">Travel date</Form.Label>
               <Form.Control
                 {...register("date", { required: true })}
                 type="date"
@@ -76,7 +77,7 @@ const AddEvent = () => {
               />
             </Form.Group>
           <Col>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Group className="my-1" controlId="exampleForm.ControlInput1">
               <Form.Label className="fw-bold">Image of this Place</Form.Label>
               <Form.Control
                 {...register("img", { required: true })}
@@ -87,12 +88,12 @@ const AddEvent = () => {
           </Col>
           <input
             type="submit"
-            value="Add Event"
-            className="nav-btn nav-reg mx-auto"
+            value="Confirm this place"
+            className="w-50 mx-auto btn-primary py-2 rounded-3"
           />
         </Row>
       </form>
-    </>
+    </div>
   );
 };
 

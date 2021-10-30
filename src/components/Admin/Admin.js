@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Nav, Row, Table } from "react-bootstrap";
 import { NavLink, Switch, Route } from "react-router-dom";
-import { FiUsers } from "react-icons/fi";
-import { AiOutlinePlus } from "react-icons/ai";
-import "./Admin.css";
 import axios from "axios";
 import swal from "sweetalert";
 import VisitorList from "../VisitorList/VisitorList";
-import { FiLogOut } from "react-icons/fi";
 import useAuth from "../../hooks/useAuth";
 import AddEvent from "../AddEvent/AddEvent";
 import AllPlaces from "../AllPlaces/AllPlaces";
@@ -27,7 +23,7 @@ const Admin = () => {
   const handleDelete = (eventId, userId) => {
     swal({
       title: "Are you sure?",
-      text: "Delete this Events and user!",
+      text: "Delete this tour and client!",
       icon: "warning",
       buttons: true,
       dangerMode: true,
@@ -45,57 +41,55 @@ const Admin = () => {
               );
               console.log(remaining);
               setUserEvents(remaining);
-              swal("Poof! Your imaginary file has been deleted!", {
+              swal("Deleted! Better luck next time", {
                 icon: "success",
               });
             }
           })
           .catch((err) => console.log(err.message));
       } else {
-        swal("Your imaginary file is safe!");
+        swal("You're safe to us");
       }
     });
   };
 
   const adminLogout = () => {
     localStorage.setItem("admin_info", null);
-    swal("successful Logout Admin", {
+    swal("Thank You Admin", {
       icon: "success",
     });
     setAdmin(false);
   };
   return (
-    <Container fluid className="my-5 text-start h-100">
+    <Container fluid className="my-5 text-start h-100" >
       <Row className="h-100 g-4 g-md-0">
-        <Col sm="12" md="4" lg="3" className="h-100">
-          <div className="p-4">
+        <Col sm="12" md="4" lg="12" className="bg-light mb-5">
+          <div className="p-2 d-flex justify-content-between align-items-center">
             <NavLink
-              className="admin-nav-item"
               activeClassName="admin-active-nav-item"
               to="/admin/visitor"
             >
-              <FiUsers></FiUsers> Total Registered Place
+               <button className="btn btn-primary">Total Registered Place</button>
             </NavLink>
             <br />
             <NavLink
-              className="admin-nav-item btn btn-primary"
               activeClassName="admin-active-nav-item"
               to="/admin/addEvent"
             >
-               Add Place in Database
+               <button className="btn btn-primary my-3 ms-3">Add Place in Database</button>
             </NavLink>
             <br />
             
-            <Nav.Link className="user-nav-item" onClick={adminLogout}>
+            <Nav.Link onClick={adminLogout}>
               {" "}
-              <FiLogOut className="me-2"></FiLogOut>Log out
+              <button className="btn btn-primary">Log out from database</button>
             </Nav.Link>
           </div>
         </Col>
         <Col
           sm="12"
           md="8"
-          lg="9"
+          lg="12"
           className="ps-2"
           style={{ borderLeft: "1px solid #adadad" }}
         >

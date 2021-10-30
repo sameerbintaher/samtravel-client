@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { useHistory, useLocation } from "react-router";
 import swal from "sweetalert";
 import useAuth from "../../hooks/useAuth";
-import "./AdminLogin.css";
 const AdminLogin = () => {
   const nameRef = useRef();
   const passRef = useRef();
@@ -24,7 +23,7 @@ const AdminLogin = () => {
       localStorage.setItem("admin_info", "ADMINinfo9910099");
       swal({
         title: "Login Successful",
-        text: "congratulation, you are Admin Now",
+        text: "Now you can control the database",
         icon: "success",
         button: "ok",
       });
@@ -43,14 +42,17 @@ const AdminLogin = () => {
     e.preventDefault();
   };
   return (
-    <div className="py-5">
-      <h3>Admin login</h3>
+    <div className="py-5" style={{fontFamily:'Josefin Sans'}}>
+      <h1 className="text-primary my-5" style={{fontWeight:'700'}}>Manage Client's Travel and Places</h1>
 
-      <div className="admin-form mx-auto">
-        <form>
-          <input type="text" placeholder="Admin Username" ref={nameRef} />
-          <input type="password" placeholder="Admin Password" ref={passRef} />
-          <input type="submit" onClick={handleSubmit} />
+      <div className="mx-auto container ">
+        <form className='border p-md-5 shadow'>
+          <h5>Your username provided from office</h5>
+          <input className="w-50 mb-4" type="text" placeholder="sameerbintaher" ref={nameRef} /> <br />
+          <h5>Your Secured Password</h5>
+          <input className="w-50 mb-4" type="password" placeholder="123456" ref={passRef} /> <br />
+          <input className="btn btn-primary w-25" type="submit" onClick={handleSubmit} />
+          
         </form>
       </div>
     </div>

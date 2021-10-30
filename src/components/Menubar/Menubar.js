@@ -5,8 +5,6 @@ import "./Menubar.css";
 import useAuth from "../../hooks/useAuth";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { FiLogOut, FiLogIn } from "react-icons/fi";
-import { MdAdminPanelSettings } from "react-icons/md";
-import { BsCalendar2Event } from "react-icons/bs";
 import avater from "../../images/avater2.png";
 
 const Menubar = () => {
@@ -14,9 +12,10 @@ const Menubar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className="position-relative">
-      <Navbar bg="light" expand="lg" fixed="top">
+      
+      <Navbar className="menubar" expand="lg" fixed="top">
         <Container>
-          <Navbar.Brand className="d-none d-md-block" as={NavLink} to="/home">
+          <Navbar.Brand className=" d-md-block bg-primary px-3 rounded-3 text-white" as={NavLink} to="/home">
             <h2>SamTarvel</h2>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -32,7 +31,7 @@ const Menubar = () => {
               </Nav.Link>
 
               {
-                user.displayName&&(<Nav.Link
+                user.email&&(<Nav.Link
                   as={NavLink}
                   to="/user_events"
                   className="nav-item"
@@ -41,8 +40,21 @@ const Menubar = () => {
                   Manage Booking
                 </Nav.Link>)
               }
+
+              {
+                user.email&&(<Nav.Link
+                  as={NavLink}
+                  to="/admin/visitor"
+                  className="user-nav-item"
+                  activeClassName="active-item"
+                >
+                  Admin Dashboard
+                </Nav.Link>)
+              }
               
             </Nav>
+
+            
           </Navbar.Collapse>
           {!user.displayName ? (
             <Nav>
@@ -58,6 +70,7 @@ const Menubar = () => {
               </Nav.Link>
             </Nav>
           ) : (
+            
             <Navbar.Brand>
               <img
                 src={user.photoURL || avater}
@@ -83,7 +96,7 @@ const Menubar = () => {
         ></AiFillCloseCircle>
         <br />
 
-        <div className="mx-auto  d-flex justify-content-center">
+        <div className="mx-auto  p-3 d-flex justify-content-center">
           <img
             src={user.photoURL || avater}
             className="img-fluid rounded-circle mx-auto  "
@@ -94,30 +107,15 @@ const Menubar = () => {
         <h5 className="mt-2 text-center">
           {user.displayName || "Invalid User"}
         </h5>
+        <h6 className="text-center">{user.email}</h6>
         <hr />
 
-        <Nav.Link
-          as={NavLink}
-          to="/user_events"
-          className="user-nav-item"
-          activeClassName="active-item"
-        >
-          <BsCalendar2Event className="me-2" />
-          My events
-        </Nav.Link>
-        <Nav.Link
-          as={NavLink}
-          to="/admin/visitor"
-          className="user-nav-item"
-          activeClassName="active-item"
-        >
-          <MdAdminPanelSettings className="me-2" />
-          Admin Panel
-        </Nav.Link>
+        
+        
         {user.displayName ? (
-          <Nav.Link className="user-nav-item" onClick={logOut}>
+          <Nav.Link className="text-dark text-center" onClick={logOut}>
             {" "}
-            <FiLogOut className="me-2"></FiLogOut>Log out
+            <button className='btn btn-primary'>Log Out</button>
           </Nav.Link>
         ) : (
           <Nav.Link
@@ -126,7 +124,7 @@ const Menubar = () => {
             className="user-nav-item"
             activeClassName="active-item"
           >
-            <FiLogIn className="me-2"></FiLogIn> Login
+             Login
           </Nav.Link>
         )}
       </div>
