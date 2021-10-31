@@ -27,6 +27,7 @@ vii. Context API <hr>
 viii. Firebase Authentication <hr>
 ix. Bootstrap 5 <hr>
 x. Custom CSS <hr>
+xii. Completely responsive <hr>
 
 # For Back End <br/>
 
