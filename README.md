@@ -8,15 +8,15 @@ This project was Completely made with React Js, NodeJs and MongoDB. I was excite
 For Front End <br/>
 
 i. React JS <hr>
-ii. JSX <hr
-iii. React Hook (useState, useEffect) <hr
-iv. Custom Hook <hr
-iv. React Router <hr
-vi. Private Router <hr
-vii. Context API <hr
-viii. Firebase Authentication <hr
-ix. Bootstrap 5 <hr
-x. Custom CSS <hr
+ii. JSX <hr>
+iii. React Hook (useState, useEffect) <hr>
+iv. Custom Hook <hr>
+iv. React Router <hr>
+vi. Private Router <hr>
+vii. Context API <hr>
+viii. Firebase Authentication <hr>
+ix. Bootstrap 5 <hr>
+x. Custom CSS <hr>
 
 In this project you will get these things
 i. You will find the best medical service
