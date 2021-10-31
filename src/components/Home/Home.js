@@ -62,13 +62,13 @@ const Home = () => {
                 data-aos-duration="800"
                 className=""
               >
-                <div className="card shadow-sm my-3 mx-auto" style={{width: "20rem"}}>
+                <div className="card shadow-sm my-3 mx-auto" style={{width: "21rem"}}>
                   <img src={event.img} style={{height: "250px"}} class="card-img-top" alt="..."/>
                   <div className="card-body">
                     <h1 className="card-title">{event.title}</h1>
                     <p className="card-text" style={{textAlign: "left"}}>{event.description}</p>
-                    <h4 style={{textAlign: "left"}}>Next tour will be <br /> {event.date}</h4>
-                    <h4 style={{textAlign: "left"}}>Total Estimated travel cost: ${event.price}</h4>
+                    <h4 style={{textAlign: "left"}}>Next tour will be:  <br /> <span className="text-primary">{event.date}</span></h4>
+                    <h4 style={{textAlign: "left"}}>Total Estimated travel cost: <span className="text-primary">${event.price}</span></h4>
                     <button className="btn btn-primary" onClick={() => handleEvent(event._id)}>Book this tour</button>
                   </div>
                 </div> 

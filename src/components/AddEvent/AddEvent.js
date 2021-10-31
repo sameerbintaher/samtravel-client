@@ -33,7 +33,7 @@ const AddEvent = () => {
       .catch((err) => console.log(err.message));
   };
   return (
-    <div className="font">
+    <div className="font container p-md-5">
       <h1 className="text-primary">Add a new place in Home</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Row sm="1" md="1" className="g-4">

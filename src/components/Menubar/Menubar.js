@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./Menubar.css";
 import useAuth from "../../hooks/useAuth";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { FiLogOut, FiLogIn } from "react-icons/fi";
 import avater from "../../images/avater2.png";
 
 const Menubar = () => {
@@ -13,8 +12,8 @@ const Menubar = () => {
   return (
     <div className="position-relative">
       
-      <Navbar className="menubar" expand="lg" fixed="top">
-        <Container>
+      <Navbar className="menubar px-md-5" expand="lg" fixed="top">
+        
           <Navbar.Brand className=" d-md-block bg-primary px-3 rounded-3 text-white" as={NavLink} to="/home">
             <h2>SamTarvel</h2>
           </Navbar.Brand>
@@ -82,7 +81,7 @@ const Menubar = () => {
               />
             </Navbar.Brand>
           )}
-        </Container>
+        
       </Navbar>
 
       <div
