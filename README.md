@@ -1,9 +1,9 @@
-#SamTavel and Tours
-#visit client-side: https://samtravel.netlify.app/
+# SamTavel and Tours <br/> <hr>
+# visit client-side: https://samtravel.netlify.app/
 
 This project was Completely made with React Js, NodeJs and MongoDB. I was excited while making this project.
 
-This project I use: </br>
+# In This project I use: </br>
 
 For Front End <br/>
 
