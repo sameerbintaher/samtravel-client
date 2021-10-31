@@ -1,5 +1,5 @@
 # SamTavel and Tours <br/> <hr>
-# visit client-side: https://samtravel.netlify.app/
+# Client-side: https://samtravel.netlify.app/
 
 This project was Completely made with React Js, NodeJs and MongoDB. I was excited while making this project.
 
@@ -7,16 +7,16 @@ This project was Completely made with React Js, NodeJs and MongoDB. I was excite
 
 For Front End <br/>
 
-i. React JS <br/><hr>
-ii. JSX <br/><hr
-iii. React Hook (useState, useEffect) <br/><hr
-iv. Custom Hook <br/><hr
-iv. React Router <br/><hr
-vi. Private Router <br/><hr
-vii. Context API <br/><hr
-viii. Firebase Authentication <br/><hr
-ix. Bootstrap 5 <br/><hr
-x. Custom CSS <br/><hr
+i. React JS <hr>
+ii. JSX <hr
+iii. React Hook (useState, useEffect) <hr
+iv. Custom Hook <hr
+iv. React Router <hr
+vi. Private Router <hr
+vii. Context API <hr
+viii. Firebase Authentication <hr
+ix. Bootstrap 5 <hr
+x. Custom CSS <hr
 
 In this project you will get these things
 i. You will find the best medical service
