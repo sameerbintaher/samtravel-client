@@ -64,7 +64,7 @@ const Admin = () => {
     <Container fluid className="my-5 text-start h-100" >
       <Row className="h-100 g-4 g-md-0">
         <Col sm="12" md="4" lg="12" className="bg-light mb-5">
-          <div className="p-2 d-flex justify-content-between align-items-center">
+          <div className="container p-2 px-md-5 d-flex justify-content-between align-items-center">
             <NavLink
               activeClassName="admin-active-nav-item"
               to="/admin/visitor"
