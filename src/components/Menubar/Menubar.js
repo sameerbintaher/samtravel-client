@@ -104,7 +104,7 @@ const Menubar = () => {
           />
         </div>
         <h5 className="mt-2 text-center">
-          {user.displayName || "Invalid User"}
+          {user.displayName || "No User"}
         </h5>
         <h6 className="text-center">{user.email}</h6>
         <hr />
